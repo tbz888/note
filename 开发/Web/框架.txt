@@ -1,0 +1,16 @@
+{Server}
+Node.js
+express
+koa
+
+{Front-end}
+Bootstrap
+Pure.CSS
+Vue.js
+AugularJS
+Font Awesome
+
+{Component}
+Socket.IO -> WebSocket
+ECharts -> Visualization
+restify -> RESTful API
