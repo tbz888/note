@@ -1,3 +1,5 @@
 # 个人笔记
 
-​	author：tbz
+想当云笔记用，没却钱买private。
+
+author：tbz
