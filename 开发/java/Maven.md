@@ -37,7 +37,7 @@
 - maven的基本工作单元
 - 项目继承：子项目通过parent指定父项目
 - 项目聚合：父项目packaging=pom，module指定子项目
-- properties指定变量foo，${foo}使用
+- properties指定变量foo，${foo}使用
 
 ## Dependency Mechanism
 - nearest definition就近原则：如果A，B和C的依赖关系定义为A - > B - > C - > D_2.0和A - > E - > D_1.0，则构建A时将使用D_1.0，因为A的路径到D到E更短。您可以在A中向D_2.0明确添加依赖项以强制使用D_2.0。
