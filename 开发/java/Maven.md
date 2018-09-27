@@ -25,26 +25,26 @@
 ​     插件目标可以绑定到生命周期阶段上。一个生命周期阶段可以绑定多个插件目标。当 maven 在构建过程中逐步的通过每个阶段时，会执行该阶段所有的插件目标。
 
 ## default lifecycle：从上往下按顺序同步阻塞执行
-  - validate - validate the project is correct and all necessary information is available
-     - compile - compile the source code of the project
-     - test - test the compiled source code using a suitable unit testing framework. These tests should not require the code be packaged or deployed
-     - package - take the compiled code and package it in its distributable format, such as a JAR.
-     - verify - run any checks on results of integration tests to ensure quality criteria are met
-     - install - install the package into the local repository, for use as a dependency in other projects locally
-     - deploy - done in the build environment, copies the final package to the remote repository for sharing with other developers and projects.
+- validate - validate the project is correct and all necessary information is available
+- compile - compile the source code of the project
+- test - test the compiled source code using a suitable unit testing framework. These tests should not require the code be packaged or deployed
+- package - take the compiled code and package it in its distributable format, such as a JAR.
+- verify - run any checks on results of integration tests to ensure quality criteria are met
+- install - install the package into the local repository, for use as a dependency in other projects locally
+- deploy - done in the build environment, copies the final package to the remote repository for sharing with other developers and projects.
 
 ## pom.xml
-    - maven的基本工作单元
-    - 项目继承：子项目通过parent指定父项目
-    - 项目聚合：父项目packaging=pom，module指定子项目
-    - properties指定变量foo，${foo}使用
+- maven的基本工作单元
+- 项目继承：子项目通过parent指定父项目
+- 项目聚合：父项目packaging=pom，module指定子项目
+- properties指定变量foo，${foo}使用
 
 ## Dependency Mechanism
-    - nearest definition就近原则：如果A，B和C的依赖关系定义为A - > B - > C - > D_2.0和A - > E - > D_1.0，则构建A时将使用D_1.0，因为A的路径到D到E更短。您可以在A中向D_2.0明确添加依赖项以强制使用D_2.0。
-    - scope依赖范围：构建阶段。compile(default)、provided、test、runtime。
-    - exclusions排除传递依赖：解决jar冲突问题If project X depends on project Y, and project Y depends on project Z, the owner of project X can explicitly exclude project Z as a dependency, using the "exclusion" element.
-    - optional可选依赖：If project Y depends on project Z, the owner of project Y can mark project Z as an optional dependency, using the "optional" element. When project X depends on project Y, X will depend only on Y and not on Y's optional dependency Z.
-    - Dependency Management依赖管理：父项目dependencyManagement指定version，子项目dependency省略version。
+- nearest definition就近原则：如果A，B和C的依赖关系定义为A - > B - > C - > D_2.0和A - > E - > D_1.0，则构建A时将使用D_1.0，因为A的路径到D到E更短。您可以在A中向D_2.0明确添加依赖项以强制使用D_2.0。
+- scope依赖范围：构建阶段。compile(default)、provided、test、runtime。
+- exclusions排除传递依赖：解决jar冲突问题If project X depends on project Y, and project Y depends on project Z, the owner of project X can explicitly exclude project Z as a dependency, using the "exclusion" element.
+- optional可选依赖：If project Y depends on project Z, the owner of project Y can mark project Z as an optional dependency, using the "optional" element. When project X depends on project Y, X will depend only on Y and not on Y's optional dependency Z.
+- Dependency Management依赖管理：父项目dependencyManagement指定version，子项目dependency省略version。
 
 ## Repository
     获取jar包 -> 本地仓库 -> 公司内部私服（settings.xml配置） -> 中央仓库
