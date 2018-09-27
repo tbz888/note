@@ -13,7 +13,7 @@
 | ${basedir}/target                                       | JAR 文件                        |
 | ${basedir}/target/classes                                                        | 编译后 的 classes               |
 
-1. groupId, artifactId, packaging, version 叫作 maven 坐标，它能唯一的确定一个项目。
+1. groupId, artifactId, version 叫作 maven 坐标，它能唯一的确定一个项目。
 2. 大项目一般会分成几个子项目。在这种情况下，每个子项目就会有自己的 POM 文件，然后它们会有一个共同的父项目。这样只要构建父项目就能够构建所有的子项目了。子项目的 POM 会继承父项目的 POM。
 
 ## Maven Plugins
