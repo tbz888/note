@@ -40,11 +40,11 @@
 - properties指定变量foo，${foo}使用
 
 ## Dependency Mechanism
-- nearest definition就近原则：如果A，B和C的依赖关系定义为A - > B - > C - > D_2.0和A - > E - > D_1.0，则构建A时将使用D_1.0，因为A的路径到D到E更短。您可以在A中向D_2.0明确添加依赖项以强制使用D_2.0。
-- scope依赖范围：构建阶段。compile(default)、provided、test、runtime。
-- exclusions排除传递依赖：解决jar冲突问题If project X depends on project Y, and project Y depends on project Z, the owner of project X can explicitly exclude project Z as a dependency, using the "exclusion" element.
-- optional可选依赖：If project Y depends on project Z, the owner of project Y can mark project Z as an optional dependency, using the "optional" element. When project X depends on project Y, X will depend only on Y and not on Y's optional dependency Z.
-- Dependency Management依赖管理：父项目dependencyManagement指定version，子项目dependency省略version。
+- nearest definition就近原则：如果A，B和C的依赖关系定义为A - > B - > C - > D_2.0和A - > E - > D_1.0，则构建A时将使用D_1.0，因为A的路径到D到E更短。您可以在A中向D_2.0明确添加依赖项以强制使用D_2.0。
+- scope依赖范围：构建阶段。compile(default)、provided、test、runtime。
+- exclusions排除传递依赖：解决jar冲突问题If project X depends on project Y, and project Y depends on project Z, the owner of project X can explicitly exclude project Z as a dependency, using the "exclusion" element.
+- optional可选依赖：If project Y depends on project Z, the owner of project Y can mark project Z as an optional dependency, using the "optional" element. When project X depends on project Y, X will depend only on Y and not on Y's optional dependency Z.
+- Dependency Management依赖管理：父项目dependencyManagement指定version，子项目dependency省略version。
 
 ## Repository
     获取jar包 -> 本地仓库 -> 公司内部私服（settings.xml配置） -> 中央仓库
