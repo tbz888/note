@@ -7,3 +7,4 @@
 - Tekton Pro
 - Myriad Pro
 - Lucida Sans
+- Georgia
