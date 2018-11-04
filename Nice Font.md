@@ -8,3 +8,4 @@
 - Myriad Pro
 - Lucida Sans
 - Georgia
+- Monaco
