@@ -49,3 +49,9 @@
 ## Repository
     获取jar包 -> 本地仓库 -> 公司内部私服（settings.xml配置） -> 中央仓库
 
+## 常用命令
+- mvn compile 编译
+- mvn package 打包
+- mvn dependency:tree 生成依赖树
+- mvn dependency:list 生成依赖列表
+- mvn dependency:analyze 依赖分析
