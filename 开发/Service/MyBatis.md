@@ -16,7 +16,7 @@
 
 ## Mapper.xml
 
-```mybatis
+```xml
 <select id="selectPerson" parameterType="int" resultType="hashmap">
   SELECT * FROM PERSON WHERE ID = #{id}
 </select>
@@ -60,7 +60,7 @@
 ## 控制结构
 
 - if 选择性包含 
-```mybatis
+```xml
 <select id="findActiveBlogWithTitleLike" resultType="Blog"> 
     SELECT * FROM BLOG 
     WHERE state = 'ACTIVE'
@@ -71,7 +71,7 @@
 ```
 
 - choose-when-otherwise 分支性包含 
-```mybatis
+```xml
 <select id="findActiveBlogLike" resultType="Blog"> 
 	SELECT * FROM BLOG WHERE state = 'ACTIVE'
     <choose> 
@@ -89,7 +89,7 @@
 ```
 
 - where 元素只会在至少有一个子元素的条件返回 SQL 子句的情况下才去插入“WHERE”子句。而且，若语句的开头为“AND”或“OR”，where 元素也会将它们去除。 
-```mybatis
+```xml
 <select id="findActiveBlogLike" resultType="Blog"> 
     SELECT * FROM BLOG 
     <where> 
@@ -101,7 +101,7 @@
 ```
 
 - foreach 遍历容器 
-```mybatis
+```xml
 <update id="batchUpdateStatus"> 
     UPDATE TEST 
     SET UPDATE_TIME = #{updateTime}, ENABLE = #{enable} 
