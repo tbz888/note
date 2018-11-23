@@ -1,7 +1,7 @@
-## 基本流程
+## 基本流程Object Relational Mapping
 1. 初始化配置SqlSessionFactory：jdbc驱动、连接字符串等// 只初始化一次，进程作用域。
 2. DaoFactory -> interface Dao -> DaoImpl
-3. session = SqlSessionFactory.openSession() // 非线程安全，不能共享，确保被关闭。
+3. session = SqlSessionFactory.openSession() // 非线程安全，不能共享，确保被关闭，请求/方法作用域。
 4. mapper = session.getMapper(Mapper.class) -> interface Mapper -> Mapper.xml
 5. Model(POJO) -> mapper.CRUD(params) 
 6. session.commit()/rollback()
