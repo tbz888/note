@@ -27,12 +27,14 @@
 - more 分页查看
 - grep 在文件中以正则表达式查找并显示 [包含匹配]
 - tailf 自动刷新尾部内容
+- wc 统计
 
 ## 网络
 - telnet/ssh 远程登录
 - ifconfig 网络配置
 - nslookup 域名查询
 - curl HTTP请求
+- netstat  网络连接管理
 
 ## 资源监控
 - free 内存
