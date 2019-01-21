@@ -52,8 +52,11 @@
 - export 修改环境变量
 - Ctrl + u 删除整行
 - bash -x 调试模式执行脚本
+- alias 别名(快捷方式)
 
 ## 玩具
 - bc 计算器
 - cal 日历
 - date 时间
+- sl 跑火车动画
+- cmatrix 黑客帝国动画
