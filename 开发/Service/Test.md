@@ -8,10 +8,10 @@
 - 整合所有真实依赖后，对完整业务流程的假设检验
 
 ### 工具
-
 - 每个Java Class附带一个public static void main(String[] args)作为UT入口
 - JUnit
 
 ### FAQ
-- Q:如何测试private的变量和函数？
-  A: Testing private methods may be an indication that those methods should be moved into another class to promote reusability.  But if you must...  If you are using JDK 1.3 or higher, you can use reflection to subvert the access control mechanism with the aid of the PrivilegedAccessor.
+Q:如何测试private的变量和函数？
+A: Testing private methods may be an indication that those methods should be moved into another class to promote reusability.  But if you must...  If you are using JDK 1.3 or higher, you can use reflection to subvert the access control mechanism with the aid of the PrivilegedAccessor.
+  
