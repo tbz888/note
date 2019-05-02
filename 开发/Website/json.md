@@ -37,3 +37,36 @@ var object = {
 str = JSON.stringify(object, null, 4)
 ```
 
+```json
+{
+  "timestamp": "1548000267000",
+  "type": "select",
+  "table": "test",
+  "conditions": [
+    {
+      "field": "csn",
+      "operator": "=",
+      "values": [
+        "123",
+        "456",
+        "789"
+      ]
+    },
+    {
+      "field": "cleared",
+      "operator": "=",
+      "values": [
+        "1"
+      ]
+    },
+    {
+      "field": "occurTime",
+      "operator": "between",
+      "values": [
+        "1548000067000",
+        "1548000167000"
+      ]
+    }
+  ]
+}
+```

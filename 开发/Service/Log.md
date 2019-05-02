@@ -15,4 +15,4 @@
 - 分级：fatal - error - warn - info - debug - trace
 
 ## 工具
-log4j、logback
+slf4j、log4j、logback
