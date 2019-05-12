@@ -14,5 +14,17 @@
 - 请求参数、响应内容
 - 分级：fatal - error - warn - info - debug - trace
 
-## 工具
-slf4j、log4j、logback
+## 生产问题
+- 服务端代码
+	- 日志(slf4j, log4j, logback)
+	- 线程、堆栈(jstack, jmap)
+- 数据库
+	- 数据表快照
+	- 锁
+- 网络
+	- HTTP请求记录(nginx, Chrome Dev)
+	- 端口
+- 操作系统
+	- CPU
+	- Memory
+	- IO
