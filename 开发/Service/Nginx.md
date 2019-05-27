@@ -42,11 +42,11 @@ http {
 
     #gzip  on;
 
-	upstream SOP { #软负载均衡上下文
-		ip_hash; #Session persistence based on client's IP
-		# round-robin(默认)：轮询
-		# least_conn：最小连接数者优先分配
-		# ip_hash：根据调用方IP哈希分配
+    upstream SOP { #软负载均衡上下文
+        ip_hash; #Session persistence based on client's IP
+        # round-robin(默认)：轮询
+        # least_conn：最小连接数者优先分配
+        # ip_hash：根据调用方IP哈希分配
         server 10.10.20.101;
         server 10.10.20.102;
         server 8.7.161.35;
