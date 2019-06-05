@@ -2,7 +2,7 @@
 - nginx has one master process and several worker processes. The main purpose of the master process is to read and evaluate configuration, and maintain worker processes. Worker processes do actual processing of requests. nginx employs event-based model and OS-dependent mechanisms to efficiently distribute requests among worker processes. 采用事件回调机制，master进程负责管理，worker进程负责处理请求。
 
 #### Configuration
-- directive指示：A simple directive consists of the name and parameters separated by spaces and ends with a semicolon (;).
+- directive指令：A simple directive consists of the name and parameters separated by spaces and ends with a semicolon (;).
 - context上下文：If a block directive can have other directives inside braces, it is called a context (examples: events, http, server, and location).
 - http://nginx.org/en/docs/
 
