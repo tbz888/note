@@ -28,3 +28,8 @@
 	- CPU
 	- Memory
 	- IO
+
+## 编码建议
+- 封装成业务含义的异常，如：ExportException extends SQLException
+- 打印频率的控制：重复的异常，适当加以计数
+- 配置：严格保存最近15天，而不是保存最近150MB
