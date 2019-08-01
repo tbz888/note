@@ -17,7 +17,7 @@
 ## 生产问题
 - 服务端代码
 	- 日志(slf4j, log4j, logback)
-	- 线程、堆栈(jstack, jmap)
+	- 线程、堆栈、GC情况(jstack, jmap, jstat)
 - 数据库
 	- 数据表快照
 	- 锁
