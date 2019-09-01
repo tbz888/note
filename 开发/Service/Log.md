@@ -16,18 +16,19 @@
 
 ## 生产问题
 - 服务端代码
-	- 日志(slf4j, log4j, logback)
-	- 线程、堆栈、GC情况(jstack, jmap, jstat)
+  - 所有日志(Spring, tomcat, nginx, 业务)
+  - JVM情况(线程栈、内存堆、GC)
 - 数据库
-	- 数据表快照
-	- 锁
+  - 数据表快照
+  - 锁信息
+  - 执行计划与IO读写
 - 网络
-	- HTTP请求记录(nginx, Chrome Dev)
-	- 端口
+  - HTTP请求记录日志
+  - 端口
 - 操作系统
-	- CPU
-	- Memory
-	- IO
+  - CPU
+  - Memory
+  - IO
 
 ## 编码建议
 - 封装成业务含义的异常，如：ExportException extends SQLException
