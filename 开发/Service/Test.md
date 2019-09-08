@@ -14,4 +14,7 @@
 ### FAQ
 Q:如何测试private的变量和函数？  
 A: Testing private methods may be an indication that those methods should be moved into another class to promote reusability.  But if you must...  If you are using JDK 1.3 or higher, you can use reflection to subvert the access control mechanism with the aid of the PrivilegedAccessor.
-  
+
+## 实践
+- 每次issue的bugfix提交，都附带一个UT代码
+- 基本功能验证用例，维护一个完整的集合
