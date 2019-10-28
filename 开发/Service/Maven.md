@@ -22,7 +22,14 @@
 
 | Plugin                | Function                                                |
 | -------------------- | ------------------------------------------------------ |
+| maven-clean-plugin | clean阶段的默认插件，删除target目录 |
 | maven-surefire-plugin | test阶段的默认插件，自动执行./src/test/java下的测试用例 |
+| maven-compiler-plugin | compile阶段的默认插件，自动编译./src/main下的代码 |
+| maven-resources-plugin | 代码之外的文件管理 |
+| maven-install-plugin | install阶段的默认插件，发布到本地仓库 |
+| maven-deploy-plugin | deploy阶段的默认插件，发布到远程仓库 |
+| maven-javadoc-plugin | 注释文档生成插件 |
+| maven-release-plugin | 版本发布：对SCM执行git tag、git commit版本号等。 |
 
 ## Maven Lifecycle
 
