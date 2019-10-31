@@ -17,6 +17,11 @@ Preconditions.checkArgument(r2.intersection(r1).equals(r1));
 // the minimal range that encloses both this range and other.
 Preconditions.checkArgument(r1.span(r3).equals(Range.atLeast(3)));
 ```
-
+- IPAddress
+```java
+Preconditions.checkArgument(InetAddresses.isInetAddress("192.168.1.1"));
+Preconditions.checkArgument("ad:0:0:fff:19:10:1:34".equals(
+	InetAddresses.forString("ad::fff:19:10:1:34").getHostAddress()));
+```
 ## Apache Commons
 
