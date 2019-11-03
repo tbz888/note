@@ -12,6 +12,7 @@
 ```
 - Model
   - stat
+
     | Key            | Value                            |
     | -------------- | -------------------------------- |
     | cZxid          | 创建的事务ID                     |
@@ -25,6 +26,7 @@
     | ephemeralOwner | 创建临时znode的sessionId         |
     | dataLength     | data长度                         |
     | numChildren    | 子节点个数                       |
+
   - data
   - children
   - watcher 数据变更的监听器
