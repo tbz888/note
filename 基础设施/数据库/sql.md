@@ -1,14 +1,19 @@
 ## 结构化查询语言
+### DQL/DML
 - INSERT table_name (列1, 列2,...) VALUES (值1, 值2,....)
-- DELETE FROM 表名称 AS 别名 WHERE 列名称 = 值
+- DELETE FROM 表名称 WHERE 列名称 = 值
 - UPDATE 表名称 SET 列名称 = 新值 WHERE 列名称 = 某值
 - SELECT 列名称 FROM 表名称
+- TRUNCATE TABLE 表名称
 
-### DDL
-DROP TABLE 表名称
-ALTER TABLE 表名称 ALTER COLUMN 列名称 数据类型
+### DDL/DCL
+- CREATE TABLE 表名称 (字段名1 类型1, ……, 字段名n 类型n)
+- DROP TABLE 表名称
+- ALTER TABLE 表名称 ALTER COLUMN 列名称 数据类型
+- GRANT 权限 TO 用户名
+- REVOKE 权限 FROM 用户名
 
-### 约束(逻辑限制)
+### 完整性约束(逻辑限制)
 - NOT NULL 非空
 - UNIQUE 唯一
 - PRIMARY KEY 主键
@@ -24,9 +29,9 @@ WHERE 列 运算符 值  (支持NOT、AND和OR的逻辑运算)
 - IS 类型判断
 - BETWEEN 范围匹配
 ### 分组、排序
-group by … 分组的依据
-having … 分组的限制条件
-order by … desc/asc 降序/升序
+- group by … 分组的依据
+- having … 分组的限制条件
+- order by … desc/asc 降序/升序
 
 ### 函数
 - length 字符串长度(oracle, mysql, sybase均支持)
@@ -37,15 +42,18 @@ order by … desc/asc 降序/升序
 - min/max 最值
 - sum 求和
 - count 计数
+- stddev 求标准差
 
-### 关联
+### 多表关联
 - left join 左外连接
 - inner join 内连接
 - right join 右外连接
 
-### 示例
+### 日常集锦
 > Oracle
 ```sql
+/* CodeStyle: FROM/子查询为一个block，进行缩进。*/
+
 --查看所有表
 select * from user_tables;
 
@@ -54,15 +62,38 @@ select * from user_tab_columns where table_name = 'TBHISQRHZ'
 
 --查询后的虚拟视图tmp, tmp2
 with tmp as(
-     select 1 rank, 'llf' name from dual union all
-     select 2 rank, 'tlj' name from dual union all
-     select 3 rank, 'tlj' name from dual
-), tmp2 as (select 't' test from dual)
+    select 1 rank, 'llf' name from dual union all
+    select 2 rank, 'tlj' name from dual union all
+    select 3 rank, 'tlj' name from dual
+), 
+tmp2 as (
+    select 't' test from dual
+)
 select * from tmp, tmp2;
 
 --排序后分页
-SELECT * FROM (SELECT T2.*, ROWNUM AS RANK FROM (
-	--排序语句 
-)T2 WHERE ROWNUM <= 20) T3 WHERE T3.RANK >= 10;
+SELECT * FROM (
+    SELECT T2.*, ROWNUM AS RANK FROM (
+		--排序语句 
+	) T2 WHERE ROWNUM <= 20
+) T3 WHERE T3.RANK >= 10;
+
+--数字补零对齐
+select LPAD(amount, 5, '0') from TBZ;
+
+--java.lang.String#split
+SELECT result FROM (          --匹配分隔符的正则表达式
+    SELECT REGEXP_SUBSTR(inner.str, '[^,，;-]+', 1, rownum) result FROM (
+        SELECT 'a1， b2, c3; d4-e5' str FROM DUAL --待分割的字符串
+    ) inner CONNECT BY ROWNUM <= 200 --循环200次，不易太大。
+) outer WHERE result is NOT null; --取非空的截取
+
+--开窗函数(partition by): 更灵活的分组策略。以下语句编译报错，group by限制太死。
+--select type, amount, sum(amount) from tbz group by type order by amount;
+select type, amount, sum(amount) over(partition by type) from tbz order by amount; --只分组
+select type, amount, sum(amount) over(partition by type order by amount) from tbz order by amount; --分组后排序，逐项累加
+select type, amount, min(amount) over(partition by type order by amount) AS MIN, max(amount) over(partition by type order by amount) AS MAX from tbz order by amount; --循环求最值
+select type, amount, rank() over(partition by type order by amount desc) AS RANK from tbz order by amount desc; --分组求排名
+select type, amount, rank() over(order by amount desc) AS RANK from tbz order by amount desc; --只排名不分组
 ```
 
