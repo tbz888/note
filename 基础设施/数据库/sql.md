@@ -95,5 +95,28 @@ select type, amount, sum(amount) over(partition by type order by amount) from tb
 select type, amount, min(amount) over(partition by type order by amount) AS MIN, max(amount) over(partition by type order by amount) AS MAX from tbz order by amount; --循环求最值
 select type, amount, rank() over(partition by type order by amount desc) AS RANK from tbz order by amount desc; --分组求排名
 select type, amount, rank() over(order by amount desc) AS RANK from tbz order by amount desc; --只排名不分组
+
+--将同一列的多个值拼接
+with temp as(
+   select 500 population, 'China' nation ,'Guangzhou' city from dual union all
+   select 1500 population, 'China' nation ,'Shanghai' city from dual union all
+   select 500 population, 'China' nation ,'Beijing' city from dual union all
+   select 1000 population, 'USA' nation ,'New York' city from dual union all
+   select 500 population, 'USA' nation ,'Bostom' city from dual union all
+   select 500 population, 'Japan' nation ,'Tokyo' city from dual
+)
+select population,nation,city,
+   listagg(upper(city), ',') --被合并的列名，分隔符
+   within GROUP (order by city) --组内排序条件
+   over(partition by nation) --分组的依据
+   AS combine_row
+from temp
+
+--根据汉字的拼音排序(支持部首、笔画)
+SELECT * FROM (
+    select '你好' as chinese from dual union all
+    select '还行' as chinese from dual union all
+    select '再见' as chinese from dual 
+) ORDER BY NLSSORT(chinese,'NLS_SORT = SCHINESE_PINYIN_M')
 ```
 
