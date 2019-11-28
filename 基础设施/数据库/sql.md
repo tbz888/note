@@ -82,10 +82,11 @@ SELECT * FROM (
 select LPAD(amount, 5, '0') from TBZ;
 
 --java.lang.String#split
-SELECT result FROM (          --匹配分隔符的正则表达式
-    SELECT REGEXP_SUBSTR(inner.str, '[^,，;-]+', 1, rownum) result FROM (
-        SELECT 'a1， b2, c3; d4-e5' str FROM DUAL --待分割的字符串
-    ) inner CONNECT BY ROWNUM <= 200 --循环200次，不易太大。
+SELECT result FROM (   --匹配分隔符的正则表达式
+    SELECT REGEXP_SUBSTR(str, '[^,，;-]+', 1, rownum) result FROM (
+        SELECT 'a1， b2, c3; d4-e5' str  --待分割的字符串
+    	FROM XMLTABLE('1 to 200')  --循环200次，不易太大。禁用connect by，因为存在内存问题。
+    ) 
 ) outer WHERE result is NOT null; --取非空的截取
 
 --开窗函数(partition by): 更灵活的分组策略。以下语句编译报错，group by限制太死。
