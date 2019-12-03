@@ -143,7 +143,7 @@ select sys_guid() from xmltable('1 to 5')
 --排列
 select sys_connect_by_path(element, ' ') from (
     select rownum element from xmltable('1 to 5') --总共有m个小球
-) where level = 2 --取出n个小球
+) where level <= 2 --取出n个小球
 connect by nocycle element <> prior element
 --组合
 select * from (
