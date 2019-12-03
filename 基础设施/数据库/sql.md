@@ -119,5 +119,38 @@ SELECT * FROM (
     select '还行' as chinese from dual union all
     select '再见' as chinese from dual 
 ) ORDER BY NLSSORT(chinese,'NLS_SORT = SCHINESE_PINYIN_M')
+
+--当前行是第n行，获取第(n-3)行
+select lag(n, 3) over(order by n asc) from (
+    select 1 n from dual union all
+    select 2 n from dual union all
+    select 3 n from dual union all
+    select 4 n from dual union all
+    select 5 n from dual
+)
+--当前行是第n行，获取第(n+3)行
+select lead(n, 3) over(order by n asc) from (
+    select 1 n from dual union all
+    select 2 n from dual union all
+    select 3 n from dual union all
+    select 4 n from dual union all
+    select 5 n from dual
+)
+
+--生成UUID
+select sys_guid() from xmltable('1 to 5')
+
+--排列
+select sys_connect_by_path(element, ' ') from (
+    select rownum element from xmltable('1 to 5') --总共有m个小球
+) where level = 2 --取出n个小球
+connect by nocycle element <> prior element
+--组合
+select * from (
+    select A, B, C from (
+        select 'a' A, 'b' B, 'c' C from dual
+    ) group by cube (A, B, C)
+) where not (A is null and B is null and C is null)
+
 ```
 
