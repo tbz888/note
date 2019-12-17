@@ -152,5 +152,7 @@ select * from (
     ) group by cube (A, B, C)
 ) where not (A is null and B is null and C is null)
 
+--个别情况下，中文匹配不生效
+select * from A where country_name = N'玻利维亚'
 ```
 
