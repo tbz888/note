@@ -7,8 +7,11 @@
 - 《非自然死亡》
 
 # 欧美
-- 《波西米亚狂想曲》
-- 《歌剧魅影》
+- 《Bohemian Rhapsody》
+- 《The Phantom Of the Opera》
+- 《The Super Mario Bros. Movie》
+- 《Wreck-It Ralph》
+- 《Interstellar》
 
 # 香港
 - 《低俗喜剧》
