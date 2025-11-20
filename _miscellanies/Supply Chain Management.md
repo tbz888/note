@@ -49,6 +49,6 @@ S&OE(Sales & Operations **Execution**)：动态调整生产计划、库存分配
 # 物流
 > 以最低的成本，通过运输、保管、配送等方式，实现原材料、半成品、成品由产地到消费地的计划、实施和管理的全过程。
 - Inbound Logistics：供应商 --JIT/VMI--> 原材料仓/保税仓 -> 自制/EMS/JDM产线
-- Outbound Logistics：DC/RDC -> X-Dock / 分包商仓 -> 站点
+- Outbound Logistics：DC/RDC -> 国家中心仓 -> X-Dock / 分包商仓 -> 站点
 - LSP(logistics service provider): a company that offers outsourced supply chain management services like transportation, warehousing, and order fulfillment. 
 - 国际跨境：报关（向海关提交相关单据、申报货物情况）、清关（依照法规办理海关申报、查验、征税、放行等一系列手续）
