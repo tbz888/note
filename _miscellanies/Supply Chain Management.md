@@ -1,4 +1,4 @@
-> 供应链：计划、订单、采购、制造、集成设计、物流、逆向。
+> 供应链：计划、订单、采购、制造、集成设计、物流。
 
 > 本质问题：供需平衡、连续性储备。
 # 财经
@@ -52,3 +52,4 @@ S&OE(Sales & Operations **Execution**)：动态调整生产计划、库存分配
 - Outbound Logistics：DC/RDC -> 国家中心仓 -> X-Dock / 分包商仓 -> 站点
 - LSP(logistics service provider): a company that offers outsourced supply chain management services like transportation, warehousing, and order fulfillment. 
 - 国际跨境：报关（向海关提交相关单据、申报货物情况）、清关（依照法规办理海关申报、查验、征税、放行等一系列手续）
+- 逆向：回运、再利用（拆解、验收、维修）、报废
