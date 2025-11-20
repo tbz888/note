@@ -45,3 +45,10 @@ S&OE(Sales & Operations **Execution**)：动态调整生产计划、库存分配
 > 商业组织为实现商业目标并试图在正确的时间以最低的价格，获得正确的数量和恰当品质的产品或服务的行为。
 - 三权分立：CEG（把控行业趋势、选择供应商）、TQC（认证供应商与物料质量）、BUYER（实施采购履行业务）
 - 内控管理：宣传教育（事前）、流程透明（事中）、司法威慑（事后）
+
+# 物流
+> 以最低的成本，通过运输、保管、配送等方式，实现原材料、半成品、成品由产地到消费地的计划、实施和管理的全过程。
+- Inbound Logistics：供应商 --JIT/VMI--> 原材料仓/保税仓 -> 自制/EMS/JDM产线
+- Outbound Logistics：DC/RDC -> X-Dock / 分包商仓 -> 站点
+- LSP(logistics service provider): a company that offers outsourced supply chain management services like transportation, warehousing, and order fulfillment. 
+- 国际跨境：报关（向海关提交相关单据、申报货物情况）、清关（依照法规办理海关申报、查验、征税、放行等一系列手续）
