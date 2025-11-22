@@ -53,3 +53,17 @@ S&OE(Sales & Operations **Execution**)：动态调整生产计划、库存分配
 - LSP(logistics service provider): a company that offers outsourced supply chain management services like transportation, warehousing, and order fulfillment. 
 - 国际跨境：报关（向海关提交相关单据、申报货物情况）、清关（依照法规办理海关申报、查验、征税、放行等一系列手续）
 - 逆向：回运、再利用（拆解、验收、维修）、报废
+
+# 集成设计
+
+## 供应对象
+- 可销售清单
+- 典型配置 
+- 囤货对象
+
+## 供应模式
+- XTO（货期逐步增加）： MTS(Make-to-stock)、PTO(Pick-to-order)、ATO(Assemble-to-order)、MTO(Make-to-order)、ETO(Engineer-to-order)
+
+- 供应导入：产品导入就近的DC/RDC，缩短货期
+
+- EOX：EOM（停售）、EOP（停产）、EOFS（停保）、EOS（停服）
