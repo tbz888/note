@@ -24,8 +24,8 @@ S&OE(Sales & Operations **Execution**)：动态调整生产计划、库存分配
 # 订单
 
 - 采购订单（Purchase Order，简称PO）：买方与供应商之间达成的货物或服务采购的法定协议文件（合同），主要用于跟踪收货和发票核算。
-
 - 销售订单（Sales Order，简称SO）：卖方在与买方就商品或服务达成一致后发出的书面凭证，用于确认客户的购买意向和详细信息。
+- BOQ（Bill of Quotation）：报价单
 
 ## 订单履行
 - 需求线（订单清洁）：订单生成时间 -> 要求交单时间 -> 要求发货时间 -> 要求到货时间
@@ -44,9 +44,12 @@ S&OE(Sales & Operations **Execution**)：动态调整生产计划、库存分配
 - 三权分立：CEG（把控行业趋势、选择供应商）、TQC（认证供应商与物料质量）、BUYER（实施采购履行业务）
 - 内控管理：宣传教育（事前）、流程透明（事中）、司法威慑（事后）
 
+# 制造
+- BOM(Bill of Materials)：制造特定产品所需的所有原材料和零部件的明细清单
+
 # 物流
 > 以最低的成本，通过运输、保管、配送等方式，实现原材料、半成品、成品由产地到消费地的计划、实施和管理的全过程。
-- Inbound Logistics：供应商 --JIT/VMI--> 原材料仓/保税仓 -> 自制/EMS/JDM产线
+- Inbound Logistics：供应商 --JIT/DUN/VMI--> 原材料仓/保税仓 -> 自制/EMS/JDM产线
 - Outbound Logistics：DC/RDC -> 国家中心仓 -> X-Dock / 分包商仓 -> 站点
 - LSP(logistics service provider): a company that offers outsourced supply chain management services like transportation, warehousing, and order fulfillment. 
 - 国际跨境：报关（向海关提交相关单据、申报货物情况）、清关（依照法规办理海关申报、查验、征税、放行等一系列手续）
