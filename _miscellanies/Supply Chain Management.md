@@ -64,16 +64,21 @@ S&OE(Sales & Operations **Execution**)：动态调整生产计划、库存分配
 - 囤货对象(SKU)
 > 编码共享度、UPPH达成率
 
-## 供应模式
-- XTO（货期逐步增加）： MTS(Make-to-stock)、PTO(Pick-to-order)、ATO(Assemble-to-order)、MTO(Make-to-order)、ETO(Engineer-to-order)
-
-- 供应导入：产品导入就近的DC/RDC，缩短货期
-> 规划执行率、及时导入导出达成率、发货料本覆盖率、供货周期
-
-- EOX：EOM（停售）、EOP（停产）、EOFS（停保）、EOS（停服）
-> 低效编码比例
-
-## 配置器
+## 产品配置器
 1. 物料供应能力表
 2. 物料替代映射关系表
 3. 典配推荐表
+- 产销研协同：客群主推/分销热度、供应状态/历史发货/货期、产品竞争力/利润
+- 主流配置汇聚
+- 化零为整：通用模块、基础配置、整机
+
+## 供应模式
+- XTO（货期逐步增加）： MTS(Make-to-stock)、PTO(Pick-to-order)、ATO(Assemble-to-order)、MTO(Make-to-order)、ETO(Engineer-to-order)
+
+- 供应导入DC
+> 规划执行率、Sales Support发货比例、及时导入导出达成率、发货料本覆盖率、供货周期
+
+- 供应导出DC
+> 生命周期管理：GA（商用）、EOM（停售）、EOP（停产）、EOFS（停保）、EOS（停服）。[低效编码比例]
+
+
