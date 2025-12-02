@@ -1,4 +1,5 @@
-> ### distributed metadata database
+# Distributed Key-value Store(AP) in hierarchically organized directories
+
 ## Znode
 - Hierarchy
 ```bash
