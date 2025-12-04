@@ -1,0 +1,41 @@
+# Remote Procedure Call
+- 过程：client stub <--> server stub
+## Server
+``` 
+// Implementation of the gRPC service on the server-side.
+private class GreeterImpl extends GreeterGrpc.GreeterImplBase {
+  @Override
+  public void sayHello(HelloRequest req, StreamObserver<HelloReply> responseObserver) {
+    // Generate a greeting message for the original method
+    HelloReply reply = HelloReply.newBuilder().setMessage("Hello " + req.getName()).build();
+
+    // Send the reply back to the client.
+    responseObserver.onNext(reply);
+
+    // Indicate that no further messages will be sent to the client.
+    responseObserver.onCompleted();
+  }
+}
+```
+## Client
+``` 
+// Client-side logic for interacting with the gRPC service.
+public void greet(String name) {
+  // Creating a request with the user's name.
+  HelloRequest request = HelloRequest.newBuilder().setName(name).build();
+  HelloReply response;
+  try {
+    // Call the original method on the server.
+    response = blockingStub.sayHello(request);
+  } catch (StatusRuntimeException e) {
+    // Log a warning if the RPC fails.
+    logger.log(Level.WARNING, "RPC failed: {0}", e.getStatus());
+    return;
+  }
+
+  // Log the response from the original method.
+  logger.info("Greeting: " + response.getMessage());
+}
+```
+
+- 选型：gRPC > Thrift
