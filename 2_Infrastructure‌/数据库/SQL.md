@@ -1,19 +1,19 @@
-## 结构化查询语言
-### DQL/DML
+# 结构化查询语言
+## DQL/DML
 - INSERT table_name (列1, 列2,...) VALUES (值1, 值2,....)
 - DELETE FROM 表名称 WHERE 列名称 = 值
 - UPDATE 表名称 SET 列名称 = 新值 WHERE 列名称 = 某值
 - SELECT 列名称 FROM 表名称
 - TRUNCATE TABLE 表名称
 
-### DDL/DCL
+## DDL/DCL
 - CREATE TABLE 表名称 (字段名1 类型1, ……, 字段名n 类型n)
 - DROP TABLE 表名称
 - ALTER TABLE 表名称 ALTER COLUMN 列名称 数据类型
 - GRANT 权限 TO 用户名
 - REVOKE 权限 FROM 用户名
 
-### 完整性约束(逻辑限制)
+## 完整性约束(逻辑限制)
 - NOT NULL 非空
 - UNIQUE 唯一
 - PRIMARY KEY 主键
@@ -21,19 +21,19 @@
 - CHECK 范围限制
 - DEFAULT 默认
 
-### 过滤条件
+## 过滤条件
 WHERE 列 运算符 值  (支持NOT、AND和OR的逻辑运算)
 - LIKE 模式匹配
 - IN 匹配值的列表
 - NOT EXISTS 不匹配的条件 (禁用NOT IN)
 - IS 类型判断
 - BETWEEN 范围匹配
-### 分组、排序
+## 分组、排序
 - group by … 分组的依据
 - having … 分组的限制条件
 - order by … desc/asc 降序/升序
 
-### 函数
+## 函数
 - length 字符串长度(oracle, mysql, sybase均支持)
 - trim 去除首尾空格
 - substr 子串
@@ -44,13 +44,13 @@ WHERE 列 运算符 值  (支持NOT、AND和OR的逻辑运算)
 - count 计数
 - stddev 求标准差
 
-### 多表关联
+## 多表关联
 - left join 左外连接
 - inner join 内连接
 - right join 右外连接
 
-### 日常集锦
-> Oracle
+# 常用语法
+## Oracle
 ```sql
 /* CodeStyle: FROM/子查询为一个block，进行缩进。*/
 
@@ -156,3 +156,18 @@ select * from (
 select * from A where country_name = N'玻利维亚'
 ```
 
+# 运维
+## Sybase
+- set statistics time on 显示SQL执行时间
+- set showplan on 显示SQL执行计划(索引、查询模式)
+- set statistics IO on  显示IO读写
+- sp_who  显示运行的进程
+- sp_lock 显示锁
+
+## Oracle
+- SET AUTOTRACE OFF 此为默认值，即关闭Autotrace 
+- SET AUTOTRACE ON EXPLAIN 只显示执行计划
+- SET AUTOTRACE ON STATISTICS 只显示执行的统计信息
+- SET AUTOTRACE ON 包含2,3两项内容
+- SET AUTOTRACE TRACEONLY 与ON相似，但不显示语句的执行结果
+- select t.SQL_TEXT, t.FIRST_LOAD_TIME from v$sqlarea t where t.FIRST_LOAD_TIME like '2019-06-01%' and SQL_TEXT like '%TBL%' order by t.FIRST_LOAD_TIME desc --查询SQL历史记录
