@@ -31,6 +31,6 @@
 - 《Wreck-It Ralph》
 - 《Interstellar》
 - 《Zootopia 1+2》
-
+- 《Charlie and the Chocolate Factory》
 
 
